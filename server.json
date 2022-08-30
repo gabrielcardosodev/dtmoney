@@ -1,0 +1,12 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Monitor novo",
+      "type": "outcome",
+      "category": "Compra",
+      "price": 1500,
+      "createdAt": "2022-08-30T16:00:53.808Z"
+    }
+  ]
+}
