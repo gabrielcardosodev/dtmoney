@@ -1,28 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
+import { TransactionsContext } from '../../../../contexts/TransactionContext'
 import { PriceHighlight, TransactionsTableContainer } from './styles'
 
 export function TransactionsTable() {
+  const { transactions } = useContext(TransactionsContext)
+
   return (
     <TransactionsTableContainer>
       <tbody>
-        <tr>
-          <td>Desenvolvimento de site</td>
-          <td>
-            <PriceHighlight variant="income">R$ 12.000,00</PriceHighlight>
-          </td>
-          <td>Venda</td>
-          <td>13/04/2021</td>
-        </tr>
-
-        <tr>
-          <td>Macbook</td>
-          <td>
-            <PriceHighlight variant="outcome">- R$ 12.000,00</PriceHighlight>
-          </td>
-          <td>Compra</td>
-          <td>18/04/2021</td>
-        </tr>
+        {transactions.map((transaction) => {
+          return (
+            <tr key={transaction.id}>
+              <td>{transaction.description}</td>
+              <td>
+                <PriceHighlight variant={transaction.type}>
+                  {transaction.price}
+                </PriceHighlight>
+              </td>
+              <td>{transaction.category}</td>
+              <td>{transaction.createdAt}</td>
+            </tr>
+          )
+        })}
       </tbody>
     </TransactionsTableContainer>
   )
