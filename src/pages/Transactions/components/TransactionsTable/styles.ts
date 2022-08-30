@@ -7,7 +7,7 @@ interface PriceHighlightProps {
 export const TransactionsTableContainer = styled.table`
   width: 100%;
 
-  /* margin-top: 1.5rem; */
+  margin-top: 1.5rem;
 
   border-collapse: separate;
   border-spacing: 0 0.5rem;
