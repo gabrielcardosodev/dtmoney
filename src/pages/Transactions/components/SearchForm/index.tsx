@@ -4,6 +4,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 
+import { useTransaction } from '../../../../hooks/useTransaction'
 import {
   SearchFormContainer,
   SearchFormInput,
@@ -17,6 +18,7 @@ const searchFormSchema = z.object({
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
 export function SearchForm() {
+  const { fetchTransaction } = useTransaction()
   const {
     register,
     handleSubmit,
@@ -26,9 +28,7 @@ export function SearchForm() {
   })
 
   async function handleSearchTransactions(data: SearchFormInputs) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    console.log(data)
+    await fetchTransaction(data.query)
   }
 
   return (
