@@ -1,12 +1,12 @@
 import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from 'phosphor-react'
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { TransactionsContext } from '../../contexts/TransactionContext'
+import { useTransaction } from '../../hooks/useTransaction'
 import { priceFormatter } from '../../utils/formatter'
 import { SummaryCard, SummaryContainer } from './styles'
 
 export function Summary() {
-  const { transactions } = useContext(TransactionsContext)
+  const { transactions } = useTransaction()
 
   const summary = transactions.reduce(
     (acc, transaction) => {
