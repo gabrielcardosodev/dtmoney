@@ -5,13 +5,13 @@ import React from 'react'
 import { TransactionOptionContainer } from './styles'
 
 interface TransactionOptionProps extends RadioGroupItemProps {
-  icon: IconProps
+  Icon: React.ComponentType<IconProps>
   text: string
   variant: 'income' | 'outcome'
 }
 
 export function TransactionOption({
-  icon,
+  Icon,
   text,
   variant,
   ...props
@@ -19,7 +19,7 @@ export function TransactionOption({
   return (
     <TransactionOptionContainer variant={variant} {...props}>
       <>
-        {icon}
+        <Icon size={24} />
         {text}
       </>
     </TransactionOptionContainer>
