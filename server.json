@@ -4,9 +4,17 @@
       "id": 1,
       "description": "Monitor novo",
       "type": "outcome",
-      "category": "Compra",
-      "price": 1500,
+      "category": "Buy",
+      "price": 4000,
       "createdAt": "2022-08-30T16:00:53.808Z"
+    },
+    {
+      "id": 2,
+      "description": "Freela",
+      "type": "income",
+      "category": "Work",
+      "price": 4000,
+      "createdAt": "2022-08-30T12:00:53.808Z"
     }
   ]
 }
