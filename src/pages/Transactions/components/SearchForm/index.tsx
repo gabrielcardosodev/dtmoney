@@ -19,6 +19,7 @@ type SearchFormInputs = z.infer<typeof searchFormSchema>
 
 export function SearchForm() {
   const { fetchTransaction } = useTransaction()
+
   const {
     register,
     handleSubmit,

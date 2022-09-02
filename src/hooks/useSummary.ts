@@ -1,7 +1,11 @@
-import { useTransaction } from './useTransaction'
+import { useContextSelector } from 'use-context-selector'
+
+import { TransactionsContext } from '../contexts/TransactionContext'
 
 export function useSummary() {
-  const { transactions } = useTransaction()
+  const transactions = useContextSelector(TransactionsContext, (context) => {
+    return context.transactions
+  })
 
   const summary = transactions.reduce(
     (acc, transaction) => {
