@@ -1,4 +1,5 @@
 import React from 'react'
+import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from 'styled-components'
 
 import { TransactionsProvider } from './contexts/TransactionContext'
@@ -14,6 +15,8 @@ export function App() {
       <TransactionsProvider>
         <Transactions />
       </TransactionsProvider>
+
+      <Toaster />
     </ThemeProvider>
   )
 }
